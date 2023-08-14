@@ -24,10 +24,11 @@ const imageGenerationController = async (req, res) => {
 
         const input = {
             prompt: search,
-            num_outputs: 4,
-            scheduler: 'DDIM',
             refine: 'expert_ensemble_refiner',
-            apply_watermark: true
+            scheduler: 'DDIM',
+            num_outputs: 2,
+            apply_watermark: true,
+            // seed: 59852
         }
         const output = await replicate.run(process.env.MODEL, { input });
 

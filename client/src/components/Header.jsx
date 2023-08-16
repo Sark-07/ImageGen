@@ -9,7 +9,7 @@ const Header = () => {
     <Logo/>
     <p className='font-inter font-medium'>Doppo</p>
     </Link>
-    <Link className="font-inter font-medium py-1 px-4 bg-[#3fb950] text-white rounded-[5px] cursor-pointer hover:scale-[1.02] transition ease-in-out duration-200">Generate Image</Link>
+    <Link to='/generate' className="font-inter font-medium py-1 px-4 bg-[#3fb950] text-white rounded-[5px] cursor-pointer hover:scale-[1.02] transition ease-in-out duration-200">Generate Image</Link>
     </nav>
   )
 }

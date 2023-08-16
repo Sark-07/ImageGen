@@ -1,4 +1,5 @@
 const Replicate = require('replicate')
+const {urlToBase64} = require('../helpers/urlTob64Json')
 // const {Configuration, OpenAIApi} = require('openai')
 
 const imageGenerationController = async (req, res) => {
@@ -31,6 +32,11 @@ const imageGenerationController = async (req, res) => {
             // seed: 59852
         }
         const output = await replicate.run(process.env.MODEL, { input });
+
+        output.forEach((element, index) => {
+            
+            output[index] = urlToBase64(element)
+        });
 
         res.status(201).json({ success: true, response: output })
 

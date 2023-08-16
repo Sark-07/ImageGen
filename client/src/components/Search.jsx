@@ -4,9 +4,12 @@ import axios from 'axios';
 const url = 'http://localhost:8080/api/v1/generate';
 const Search = () => {
   const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(false)
   const handleClick = async () => {
     try {
+      setLoading(true)
       const response = await axios.post(url, { search });
+      setLoading(false)
     } catch (error) {
       console.log(error);
     }

@@ -1,10 +1,10 @@
 const Replicate = require('replicate')
-const {urlToBase64} = require('../helpers/urlTob64Json')
+const urlToBase64 = require('../helpers/urlTob64Json')
 // const {Configuration, OpenAIApi} = require('openai')
 
 const imageGenerationController = async (req, res) => {
 
-    const { search } = req.body
+    const { prompt } = req.body
 
     try {
         // const configuration = new Configuration({
@@ -12,7 +12,7 @@ const imageGenerationController = async (req, res) => {
         //   });
         // const openai = new OpenAIApi(configuration);
         // const response = await openai.createImage({
-        //     prompt: search,
+        //     prompt: prompt,
         //     n: 2,
         //     size: "256x256",
         //     response_format: 'b64_json'
@@ -24,21 +24,23 @@ const imageGenerationController = async (req, res) => {
 
 
         const input = {
-            prompt: search,
+            prompt: prompt,
             refine: 'expert_ensemble_refiner',
             scheduler: 'DDIM',
-            num_outputs: 2,
+            num_outputs: 4,
             apply_watermark: true,
             // seed: 59852
         }
         const output = await replicate.run(process.env.MODEL, { input });
 
-        output.forEach((element, index) => {
-            
-            output[index] = urlToBase64(element)
-        });
+        // output.forEach(async (element, index) => {
+        //     console.log(element);
+        //     console.log(await urlToBase64(element));
+        //     output[index] = await urlToBase64(element)
+        // });
 
-        res.status(201).json({ success: true, response: output })
+        console.log(output);
+        res.status(201).json({ success: true, output })
 
     } catch (error) {
         console.log(error);

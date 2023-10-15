@@ -4,6 +4,7 @@ require('dotenv/config')
 const connectDB = require('../config/connectDB')
 const postRoutes = require('../router/postRoute')
 const imageGenerationRoutes = require('../router/imageGenerationRoute')
+const getAllGenerationsRoutes = require('../router/getAllGenerationsRoute')
 const PORT = process.env.PORT || 3000
 const app = express()
 
@@ -18,6 +19,7 @@ app.use(express.json({limit: '50mb'}))
 // router middlewares
 app.use('/api/v1', postRoutes)
 app.use('/api/v1', imageGenerationRoutes)
+app.use('/api/v1', getAllGenerationsRoutes)
 
 app.get('/', (req, res) => {
     res.send('Hello my Dear!')

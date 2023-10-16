@@ -13,9 +13,9 @@ const postController = async (req, res) => {
         const { userName, prompt, images } = req.body
         // const photoUrl = await cloudinary.uploader.upload(photo)
         const postId = String(btoa(images))
-        const findPost = Post.findOne({postId: postId})
+        const findPost = await Post.findOne({postId: postId})
         console.log(findPost);
-        if (!findPost){
+        if (findPost){
             return res.status(200).json({success: false, message: "Generation already in the library."})
         }
         const newPost = await Post.create({

@@ -6,6 +6,7 @@ import Loader from '../../components/Loader';
 import GeneratedImagesGrid from '../../components/GeneratedImagesGrid';
 import axios from 'axios';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 const generateUrl = 'http://localhost:8080/api/v1/generate';
 const storeImageUrl = 'http://localhost:8080/api/v1/posts';
 const GenerateImage = () => {
@@ -61,8 +62,15 @@ const GenerateImage = () => {
   return (
     <>
       <Header path={path} />
-      <div className='generate-image'>
-        <div className='max-w-[90%] mx-auto mt-40 flex flex-col gap-4'>
+      <div className='generate-image md: sm:min-w-[80%] sm:max-w-fit  w-[90%] mx-auto sm:mt-20 mt-10'>
+        <h1 className='font-extrabold text-[#222328] sm:text-[2rem] text-[1.75rem]'>
+          Create
+        </h1>
+        <p className='text-[#666e75] mb-6 text-[0.9rem] max-w-[700px]'>
+          Simplify visual content creation with AI, turning ideas into impactful
+          images effortlessly.
+        </p>
+        <div className='w-full mx-auto  flex flex-col gap-4'>
           {/* Search */}
           <div className='h-fit flex-col overflow-hidden w-full flex items-start gap-2'>
             <label
@@ -114,10 +122,10 @@ const GenerateImage = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-wrap justify-center gap-4 h-fit max-w-[90%] mx-auto mt-4 p-4 border border-solid border-[#e6ebf4] rounded'>
+        <div className='flex flex-wrap justify-center gap-4 h-fit w-full mx-auto mt-4 p-4 border border-solid border-[#e6ebf4] rounded'>
           {loading ? <Loader /> : <GeneratedImagesGrid data={generations} />}
         </div>
-        <div className='max-w-[90%] mx-auto flex flex-col items-center p-4 gap-4 border-solid border-[#e6ebf4] rounded'>
+        <div className='w-full mx-auto flex flex-col items-center p-4 gap-4 border-solid border-[#e6ebf4] rounded'>
           <p className='text-[#666e75]'>
             Once you have generated your images, you can store them to your
             library.
@@ -130,6 +138,7 @@ const GenerateImage = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

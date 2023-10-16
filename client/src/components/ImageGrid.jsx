@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CommunitySearch from './CommunitySearch';
 import Cards from './Cards';
 
 const ImageGrid = ({ data }) => {
   const [search, setSearch] = useState('');
 
+  const makeArray = () => {
+    let arr = [];
+    data.forEach((element) => {
+      element.images.forEach((item) => {
+        arr.push({
+          userName: element.userName,
+          prompt: element.prompt,
+          url: item,
+        });
+      });
+    });
+    return arr.reverse();
+  };
+
+
   return (
     <div className='flex flex-col items-start mt-0'>
-      <h1 className='font-extrabold text-[#222328] text-[2rem]'>
-        The Community Showcase
+      <h1 className='font-extrabold text-[#222328] sm:text-[2rem] text-[1.75rem]'>
+        The Community Library
       </h1>
       <p className='text-[#666e75] text-[0.9rem] max-w-[700px]  mb-6'>
         Browse through a collection of imagination and visually stunning images
@@ -30,17 +45,18 @@ const ImageGrid = ({ data }) => {
             type='text'
             className='py-3 px-4 text-black bg-white w-full border-none outline-none'
           />
-          <button onClick={(e) => handleSearchClick(e)}
+          {/* <button
+            onClick={(e) => handleSearchClick(e)}
             className={`${
               search ? 'bg-black text-white' : 'text-[#777] hover:text-black'
             } py-3 border-l border-l-[#e6ebf4] px-3`}
           >
             Search
-          </button>
+          </button> */}
         </div>
       </div>
-      <div className='mt-8 w-full'>
-        <Cards data={data} search={search} />
+      <div className='py-8 w-full'>
+        <Cards data={makeArray()} search={search} />
       </div>
     </div>
   );

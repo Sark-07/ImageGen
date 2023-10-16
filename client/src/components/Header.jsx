@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { ReactComponent as Logo } from "../assets/svg/logo.svg";
 const Header = ({path}) => {
   return (
-    <nav className='w-full h-[8vh] px-16 flex items-center justify-between bg-white border-b border-b-[#e6ebf4]'>
+    <nav className='w-full h-[8vh] xs:px-16 px-8 flex items-center justify-between bg-white border-b border-b-[#e6ebf4]'>
 
     <Link to='/' className="py-2 flex items-center justify-center gap-1">
     <Logo/>

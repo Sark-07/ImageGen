@@ -8,6 +8,9 @@ module.exports = {
       screens: {
         xs: '480px',
       },
+      gridTemplateColumns: {
+        'custom': 'repeat(auto-fit,minmax(320px,1fr))'
+      },
       fontFamily: {
         inter: ['Inter var', 'sans-serif'],
       },

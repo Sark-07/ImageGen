@@ -5,7 +5,9 @@
 * {
     font-family: 'Inter', sans-serif;
 }
-
+#root{
+    min-height: 100vh;
+}
 @media screen and (min-width: 480px) {
     .card:nth-child(7n + 1) {
         grid-column: auto/span 2;
@@ -21,3 +23,24 @@
   background-color: #666e75;
   border-radius: 5px;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6e6e6e;
+  }

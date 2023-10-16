@@ -77,7 +77,7 @@ const GenerateImage = () => {
               htmlFor='User Name'
               className='text-[#777] font-medium text-sm'
             >
-              You Name
+              Your Name
             </label>
             <input
               required

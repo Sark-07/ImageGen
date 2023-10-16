@@ -33,7 +33,7 @@ const ImageGrid = ({ data }) => {
       <div className='w-full flex flex-col items-start gap-5'>
         <span className='flex items-center justify-center gap-2'>
           <p className='text-[#777] text-sm font-bold'>
-            Search from your generated images.
+            Search in the library.
           </p>
         </span>
         <div className='h-fit overflow-hidden pl-4 w-full rounded-md shadow-md bg-clip-border flex justify-between items-center'>

@@ -29,7 +29,7 @@ const startServer = async () => {
 
    try {
     await connectDB(process.env.MONGO_URI)
-    app.listen(PORT, () => console.log(`Listening to http://localhost:${PORT}`))
+    app.listen(PORT, () => console.log(`Listening to https://dalle-clone-nnd7.onrender.com/:${PORT}`))
    } catch (error) {
     console.log(error);
    }

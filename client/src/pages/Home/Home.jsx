@@ -4,7 +4,7 @@ import ImageGrid from '../../components/ImageGrid';
 import Header from '../../components/Header'
 import Loader from '../../components/Loader'
 import Footer from '../../components/Footer';
-const url = 'http://localhost:8080/api/v1/get-generations'
+const url = 'https://dalle-clone-nnd7.onrender.com/api/v1/get-generations'
 const Home = () => {
   const {data: {data}, loading} = useFetch(url)
   // data && console.log(data.data);

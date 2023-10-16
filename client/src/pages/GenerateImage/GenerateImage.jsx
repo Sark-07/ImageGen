@@ -7,8 +7,8 @@ import GeneratedImagesGrid from '../../components/GeneratedImagesGrid';
 import axios from 'axios';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-const generateUrl = 'http://localhost:8080/api/v1/generate';
-const storeImageUrl = 'http://localhost:8080/api/v1/posts';
+const generateUrl = 'https://dalle-clone-nnd7.onrender.com/api/v1/generate';
+const storeImageUrl = 'https://dalle-clone-nnd7.onrender.com/api/v1/posts';
 const GenerateImage = () => {
   const [prompt, setPrompt] = useState('');
   const [userName, setUserName] = useState('John Doe');

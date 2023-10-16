@@ -3,7 +3,7 @@ import React from 'react'
 const Loader = () => {
   return (
     <div className='w-full h-80 overflow-hidden grid place-items-center'>
-        <img src="../assets/gif/loader.gif" alt="loader" className='w-8 h-8 object-cover object-center'/>
+        <img src="client\src\assets\gif\loader.gif" alt="loader" className='w-8 h-8 object-cover object-center'/>
     </div>
   )
 }

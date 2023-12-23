@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import CommunitySearch from './CommunitySearch';
+import React, { useState } from 'react';
 import Cards from './Cards';
 
 const ImageGrid = ({ data }) => {

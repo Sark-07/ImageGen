@@ -7,7 +7,7 @@ const Header = ({path}) => {
 
     <Link to='/' className="py-2 flex items-center justify-center gap-1">
     <Logo/>
-    <p className='font-inter font-medium'>Doppo</p>
+    <p className='font-inter font-medium'>ImageGen</p>
     </Link>
     <Link to={path == '/generate' ? '/' : '/generate' } className="font-inter font-medium py-1 px-4 bg-[#3fb950] text-white rounded-[5px] cursor-pointer hover:scale-[1.02] transition ease-in-out duration-200">{path == '/generate' ? 'Library' : 'Generate Image' }</Link>
     </nav>
